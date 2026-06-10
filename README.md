@@ -32,5 +32,5 @@ go build -o Go-Monitor .
 | `-n` | `10` | Cantidad de procesos |
 
 ```bash
-./gomon -r 500 -n 20
+./Go-Monitor -r 500 -n 20
 ```
