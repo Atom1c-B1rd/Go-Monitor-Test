@@ -95,7 +95,7 @@ func (m Model) View() string {
 
 	var sb strings.Builder
 
-	sb.WriteString(styleTitle.Render("⚡ gomon — system monitor") + "\n")
+	sb.WriteString(styleTitle.Render("Go-Monitor") + "\n")
 	sb.WriteString(renderCPU(m.snap, m.width) + "\n")
 	sb.WriteString(renderMemory(m.snap, m.width) + "\n")
 	sb.WriteString(renderProcesses(m.snap, m.width) + "\n")
@@ -217,7 +217,7 @@ func doCollect(topN int) tea.Cmd {
 func RenderSnapshot(snap *Snapshot) string {
 	var sb strings.Builder
 
-	sb.WriteString(fmt.Sprintf("gomon snapshot — %s\n\n", snap.CollectedAt.Format(time.RFC1123)))
+	sb.WriteString(fmt.Sprintf("Go-Monitor snapshot — %s\n\n", snap.CollectedAt.Format(time.RFC1123)))
 	sb.WriteString(fmt.Sprintf("CPU Total: %.1f%%\n", snap.CPU.Total))
 	for i, c := range snap.CPU.PerCPU {
 		sb.WriteString(fmt.Sprintf("  cpu%d: %.1f%%\n", i, c))

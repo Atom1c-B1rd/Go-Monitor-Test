@@ -17,9 +17,9 @@ var (
 )
 
 var rootCmd = &cobra.Command{
-	Use:   "gomon",
+	Use:   "Go-Monitor",
 	Short: "A lightweight system monitor for the terminal",
-	Long: `gomon — real-time system monitor written in Go.
+	Long: `Go-Monitor — real-time system monitor written in Go.
 Displays CPU, memory, and top processes in your terminal.`,
 	RunE: func(cmd *cobra.Command, args []string) error {
 		interval := time.Duration(refreshRate) * time.Millisecond
@@ -30,7 +30,7 @@ Displays CPU, memory, and top processes in your terminal.`,
 		m := internal.NewModel(interval, topN)
 		p := tea.NewProgram(m, tea.WithAltScreen())
 		if _, err := p.Run(); err != nil {
-			return fmt.Errorf("error running gomon: %w", err)
+			return fmt.Errorf("error running Go-Monitor: %w", err)
 		}
 		return nil
 	},
@@ -38,9 +38,9 @@ Displays CPU, memory, and top processes in your terminal.`,
 
 var versionCmd = &cobra.Command{
 	Use:   "version",
-	Short: "Print the version of gomon",
+	Short: "Print the version of Go-Monitor",
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("gomon v0.1.0")
+		fmt.Println("Go-Monitor v0.1.0")
 	},
 }
 
