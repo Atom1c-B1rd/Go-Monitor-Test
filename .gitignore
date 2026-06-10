@@ -1,0 +1,12 @@
+# Binaries
+gomon
+*.exe
+*.out
+
+# Go build cache
+/vendor/
+
+# IDE
+.idea/
+.vscode/
+*.swp
